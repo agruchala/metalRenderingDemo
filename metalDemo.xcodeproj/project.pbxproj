@@ -15,6 +15,8 @@
 		FA1B1A5726B051260070F7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1B1A5526B051260070F7BA /* LaunchScreen.storyboard */; };
 		FA1B1A6226B051260070F7BA /* metalDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B1A6126B051260070F7BA /* metalDemoTests.swift */; };
 		FA1B1A6D26B051270070F7BA /* metalDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B1A6C26B051270070F7BA /* metalDemoUITests.swift */; };
+		FABAE2A626B3515500D66350 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAE2A526B3515500D66350 /* Filter.swift */; };
+		FABAE2A826B35DC700D66350 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAE2A726B35DC700D66350 /* MetalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FA1B1A6826B051270070F7BA /* metalDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metalDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1B1A6C26B051270070F7BA /* metalDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metalDemoUITests.swift; sourceTree = "<group>"; };
 		FA1B1A6E26B051270070F7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABAE2A526B3515500D66350 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		FABAE2A726B35DC700D66350 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				FA1B1A5326B051260070F7BA /* Assets.xcassets */,
 				FA1B1A5526B051260070F7BA /* LaunchScreen.storyboard */,
 				FA1B1A5826B051260070F7BA /* Info.plist */,
+				FABAE2A526B3515500D66350 /* Filter.swift */,
+				FABAE2A726B35DC700D66350 /* MetalView.swift */,
 			);
 			path = metalDemo;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1B1A4F26B051250070F7BA /* ViewController.swift in Sources */,
+				FABAE2A626B3515500D66350 /* Filter.swift in Sources */,
+				FABAE2A826B35DC700D66350 /* MetalView.swift in Sources */,
 				FA1B1A4B26B051250070F7BA /* AppDelegate.swift in Sources */,
 				FA1B1A4D26B051250070F7BA /* SceneDelegate.swift in Sources */,
 			);
