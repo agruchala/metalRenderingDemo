@@ -22,20 +22,12 @@
                                     <action selector="sliderDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="CMw-mn-hiR"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xv-6B-pjC" customClass="MetalView" customModule="metalDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="735"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nkF-Zu-doR" secondAttribute="bottom" constant="1" id="2vN-zb-4a4"/>
-                            <constraint firstItem="4Xv-6B-pjC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BIn-cD-nBJ"/>
                             <constraint firstItem="nkF-Zu-doR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ESZ-jp-mxw"/>
-                            <constraint firstItem="nkF-Zu-doR" firstAttribute="top" secondItem="4Xv-6B-pjC" secondAttribute="bottom" constant="8" symbolic="YES" id="fgB-9f-uZ6"/>
-                            <constraint firstItem="4Xv-6B-pjC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gBH-lZ-mjO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Xv-6B-pjC" secondAttribute="trailing" id="kZr-0E-hoS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nkF-Zu-doR" secondAttribute="trailing" constant="20" id="lwa-Ae-h2E"/>
                         </constraints>
                     </view>
@@ -48,7 +40,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adjustmentSlider" destination="nkF-Zu-doR" id="wSF-70-vTY"/>
-                        <outlet property="imageRenderingContainerView" destination="4Xv-6B-pjC" id="1K8-0G-Moa"/>
                         <outlet property="loadImageButton" destination="fNT-3B-XQF" id="IpO-Ev-KEk"/>
                     </connections>
                 </viewController>
