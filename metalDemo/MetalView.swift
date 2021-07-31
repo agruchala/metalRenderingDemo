@@ -19,7 +19,6 @@ class MetalView: MTKView {
     
     var context: CIContext? // 2
     var queue: MTLCommandQueue? // 3
-    var commandBuffer: MTLCommandBuffer? // 4
     let colorSpace = CGColorSpaceCreateDeviceRGB() // 5
     var image: CIImage? { // 6
         didSet {

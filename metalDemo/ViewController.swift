@@ -14,8 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var loadImageButton: UIBarButtonItem!
     @IBOutlet weak var adjustmentSlider: UISlider!
-    //@IBOutlet weak var imageRenderingContainerView: MetalView!
-    var commandBuffer: MTLCommandBuffer!
+    var queue: MTLCommandQueue!
     let colorSpace = CGColorSpaceCreateDeviceRGB()
     var mltView: MTKView!
     private var filter: Filter?
@@ -26,7 +25,7 @@ class ViewController: UIViewController {
         mltView = MTKView(frame: .zero, device: metalDevice)
         mltView.framebufferOnly = false
         context = CIContext(mtlDevice: metalDevice)
-        
+        queue = metalDevice.makeCommandQueue()
         
     }
     
@@ -51,12 +50,26 @@ class ViewController: UIViewController {
     
     private func renderImage(image: CIImage) {
         let drawable = mltView.currentDrawable!
+        let buffer = queue.makeCommandBuffer()!
         
-        context.render(image, to: drawable.texture,
-                       commandBuffer: nil,
-                       bounds: image.extent,
+        let widthScale = mltView.drawableSize.width / image.extent.width
+        let heightScale = mltView.drawableSize.height / image.extent.height
+        
+        let scale = min(widthScale, heightScale)
+        
+        let scaledImage = image.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+        
+        let yPos = mltView.drawableSize.height / 2 - scaledImage.extent.height / 2
+        
+        let bounds = CGRect(x: 0, y: -yPos, width: mltView.drawableSize.width, height: mltView.drawableSize.height)
+        
+        context.render(scaledImage,
+                       to: drawable.texture,
+                       commandBuffer: buffer,
+                       bounds: bounds,
                        colorSpace: colorSpace)
-        drawable.present()
+        buffer.present(drawable)
+        buffer.commit()
     }
     
 }
