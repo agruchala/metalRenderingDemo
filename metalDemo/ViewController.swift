@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadImageButton: UIBarButtonItem!
     @IBOutlet weak var adjustmentSlider: UISlider!
     //@IBOutlet weak var imageRenderingContainerView: MetalView!
-    var queue: MTLCommandQueue!
     var commandBuffer: MTLCommandBuffer!
     let colorSpace = CGColorSpaceCreateDeviceRGB()
     var mltView: MTKView!
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         mltView = MTKView(frame: .zero, device: metalDevice)
         mltView.framebufferOnly = false
         context = CIContext(mtlDevice: metalDevice)
-        queue = metalDevice.makeCommandQueue()!
         
         
     }
@@ -52,14 +50,13 @@ class ViewController: UIViewController {
     }
     
     private func renderImage(image: CIImage) {
-        let buffer = queue.makeCommandBuffer()!
         let drawable = mltView.currentDrawable!
+        
         context.render(image, to: drawable.texture,
-                       commandBuffer: buffer,
+                       commandBuffer: nil,
                        bounds: image.extent,
                        colorSpace: colorSpace)
-        buffer.present(drawable)
-        buffer.commit()
+        drawable.present()
     }
     
 }
